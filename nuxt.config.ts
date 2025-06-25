@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  compatibilityDate: '2024-04-03',
+  devtools: { enabled: false },
+  modules: ['@nuxtjs/tailwindcss'],
   css: ['~/assets/css/main.css'],
   
   // Netlify deployment configuration
@@ -19,10 +21,6 @@ export default defineNuxtConfig({
     }
   },
 
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
+  // Ensure compatibility
+  ssr: true
 })
